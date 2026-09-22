@@ -45,18 +45,18 @@ public final class MainActivity extends Activity implements TextureView.SurfaceT
         detections=new DetectionOverlay(this);area.addView(detections,new FrameLayout.LayoutParams(-1,-1));roi=new EnrollmentOverlay(this);area.addView(roi,new FrameLayout.LayoutParams(-1,-1));
         root.addView(area,new LinearLayout.LayoutParams(-1,0,1));
         card=text(root,18,Color.YELLOW);card.setText("请依次录入三件商品");card.setMaxLines(3);card.setMovementMethod(new android.text.method.ScrollingMovementMethod());
-        inferenceStatus=text(root,14,Color.rgb(150,230,180));inferenceStatus.setMinLines(2);inferenceStatus.setMaxLines(3);
+        inferenceStatus=text(root,14,Color.rgb(150,230,180));inferenceStatus.setMinLines(2);inferenceStatus.setMaxLines(5);
         status=text(root,12,Color.LTGRAY);status.setMaxLines(2);setContentView(root);
         try{store=new FeatureStore(new File(getFilesDir(),"features.bin"));}
         catch(IOException e){inferenceStatus.setText("特征库读取失败："+e.getMessage());new AlertDialog.Builder(this).setMessage("特征库损坏或版本不匹配，已保留原文件。请通过应用设置清除数据后重新录入。").setPositiveButton("关闭",(d,v)->finish()).show();return;}
         for(int i=0;i<3;i++){try{info[i]=readAsset("SKU_info/sku"+(i+1)+"_info.txt");}catch(IOException e){info[i]="商品资料缺失";}}
-        inference=new DetectEngine(store,(boxes,sku,message,time)->{
+        inference=new DetectEngine(store,(boxes,sku,message,time,pickupHint)->{
             if(SystemClock.elapsedRealtime()-time>1500){detections.setDetections(null);inferenceStatus.setText("分析延迟过高，暂不更新拿放结果");return;}
             lastResult=SystemClock.elapsedRealtime();detections.setDetections(boxes);inferenceStatus.setText(message);
             if(selectedSku>=0)card.setText(names[selectedSku]+" · 已录入 "+store.count(selectedSku)+" 张\n"+info[selectedSku]);
-            else if(sku>=0)card.setText(names[sku]+"\n"+info[sku]);
+            else if(sku>=0)card.setText(names[sku]+" · "+pickupHint+"\n"+info[sku]);
             else if(sku==-2)card.setText("多件商品被拿起，请一次展示一件");
-            else card.setText("等待商品拿起 · 识别框显示各商品身份");
+            else card.setText(pickupHint);
         });
         slider.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){public void onProgressChanged(SeekBar b,int p,boolean u){float scale=.4f+p/100f;roi.scale(scale);inference.setRoiScale(scale);}public void onStartTrackingTouch(SeekBar b){}public void onStopTrackingTouch(SeekBar b){}});
         try{copyAsset("sku_detector_640_fp16.rknn");copyAsset("chips_640_int8.rknn");String det=copyAsset(modelFiles[getPreferences(MODE_PRIVATE).getInt("detectorIndex",3)]),emb=copyAsset("emb_rk3588_fp16_norm.rknn");inference.load(det,emb);}

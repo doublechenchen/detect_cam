@@ -1,0 +1,4 @@
+PASS 51 checks
+PASS: malformed/empty outputs, single-class NMS, labels, NaN handling; 0 real model fixtures match Python.
+PASS: padded rows, interleaved chroma, crop, positions and bounds
+PASS 28 pickup regression checks

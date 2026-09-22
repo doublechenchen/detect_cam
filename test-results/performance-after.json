@@ -1,0 +1,63 @@
+{
+  "pid": "11349",
+  "samples": 136,
+  "warmup_frames_excluded": 5,
+  "metric": "after I420 frame clone/submission to analysis completion; excludes sensor, prior conversion and UI rendering",
+  "under_300ms_percent": 100.0,
+  "metrics": {
+    "total": {
+      "mean": 129.76,
+      "p50": 128.0,
+      "p95": 164,
+      "max": 180
+    },
+    "queue": {
+      "mean": 14.04,
+      "p50": 13.0,
+      "p95": 28,
+      "max": 44
+    },
+    "primary": {
+      "mean": 46.92,
+      "p50": 46.0,
+      "p95": 56,
+      "max": 63
+    },
+    "secondary_decode": {
+      "mean": 50.02,
+      "p50": 49.5,
+      "p95": 63,
+      "max": 68
+    },
+    "features": {
+      "mean": 17.69,
+      "p50": 17.0,
+      "p95": 36,
+      "max": 45
+    },
+    "other": {
+      "mean": 1.08,
+      "p50": 1.0,
+      "p95": 3,
+      "max": 5
+    },
+    "embeds": {
+      "mean": 3.09,
+      "p50": 3.0,
+      "p95": 5,
+      "max": 6
+    },
+    "cached": {
+      "mean": 2.06,
+      "p50": 2.0,
+      "p95": 3,
+      "max": 3
+    },
+    "boxes": {
+      "mean": 5.15,
+      "p50": 5.0,
+      "p95": 7,
+      "max": 7
+    }
+  }
+}

@@ -1,0 +1,30 @@
+PASS Android 13 target device
+PASS Camera2 external camera enumerated
+PASS JNI library loaded
+PASS RKNN detector and embedding initialized
+PASS native detector tensor iteration 0
+PASS decoder accepts actual NPU tensor 0
+PASS finite nonzero 576-D embedding 0
+PASS native detector tensor iteration 1
+PASS decoder accepts actual NPU tensor 1
+PASS finite nonzero 576-D embedding 1
+PASS native detector tensor iteration 2
+PASS decoder accepts actual NPU tensor 2
+PASS finite nonzero 576-D embedding 2
+PASS native detector tensor iteration 3
+PASS decoder accepts actual NPU tensor 3
+PASS finite nonzero 576-D embedding 3
+PASS native detector tensor iteration 4
+PASS decoder accepts actual NPU tensor 4
+PASS finite nonzero 576-D embedding 4
+5 detector+embedding cycles ms=659
+PASS short camera buffer rejected
+PASS NaN crop rejected
+PASS reversed crop rejected
+PASS INT8 chips model initialized
+PASS INT8 chips output contract
+PASS Android filesystem feature persistence
+PASS SKU info asset 1
+PASS SKU info asset 2
+PASS SKU info asset 3
+PASS total=28

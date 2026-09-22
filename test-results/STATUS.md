@@ -1,5 +1,9 @@
 # 验证状态（2026-09-22）
 
+以下为首次提交时的记录。之后的拿起判定修复、最新 INT8/缓存构建与板端检查结果见 [PICKUP_OPTIMIZATION.md](PICKUP_OPTIMIZATION.md)。
+
+最新性能优化与重新构建结果见 [PERFORMANCE.md](PERFORMANCE.md)。
+
 ## 已验证
 
 - RK3588 orangepi5ultra，Android 13，Camera2 外接 USB 相机 ID 141，1280×720。

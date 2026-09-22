@@ -6,4 +6,4 @@ ee610bf6f2dfe0ee532485821938a86bd3bff9ae582a10fbd05790cd23d5c51b  android/app/sr
 3f09656b68a597abfd4543d9bbd576d09459622a9ab6aafc0f3385a7f24332fb  android/app/src/main/assets/sku110k_yolov8n_960_fp16.rknn
 cc5594c07bd63c12c3de7aafadfd291bb1f9c9720b8279ec922a04cae05ba050  android/app/src/main/assets/sku_detector_640_fp16.rknn
 85c201d39ccef2e618a6a9cd971a12ccdc2f452c17843339a9b2e1bb5357e9f1  android/app/src/main/jniLibs/arm64-v8a/librknnrt.so
-fb2cd0c44022a16c5f4076b79956f7fbd5a87cea0fc4af1e1eb72db8e1bd00e0  android/app/src/main/jniLibs/arm64-v8a/libsmartcam_rknn.so
+c3525e8276faa161b6aafd05bb2593523e6a8886eb1942bd32847e46d026d215  android/app/src/main/jniLibs/arm64-v8a/libsmartcam_rknn.so

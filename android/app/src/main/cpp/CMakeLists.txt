@@ -7,6 +7,9 @@ if(NOT RKNN_SDK_DIR)
 endif()
 
 add_library(smartcam_rknn SHARED rknn_bridge.cpp)
+# Camera preprocessing loops run on every detector and embedding call. Android
+# debug builds otherwise compile them at -O0. Preserve IEEE checks (no fast-math).
+target_compile_options(smartcam_rknn PRIVATE -O3)
 add_library(rknnrt SHARED IMPORTED)
 set_target_properties(rknnrt PROPERTIES IMPORTED_LOCATION
         "${RKNN_SDK_DIR}/librknn_api/${CMAKE_ANDROID_ARCH_ABI}/librknnrt.so")
