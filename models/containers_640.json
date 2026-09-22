@@ -1,0 +1,72 @@
+{
+  "source": "/home/cc/Documents/ChatGPT/smart_cam/yolov8n.pt",
+  "sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+  "classes": [
+    "bottle",
+    "cup"
+  ],
+  "coco_class_ids": [
+    39,
+    41
+  ],
+  "input": "RGB UINT8 NHWC; letterbox 114; /255 fused",
+  "outputs": [
+    [
+      1,
+      64,
+      80,
+      80
+    ],
+    [
+      1,
+      2,
+      80,
+      80
+    ],
+    [
+      1,
+      1,
+      80,
+      80
+    ],
+    [
+      1,
+      64,
+      40,
+      40
+    ],
+    [
+      1,
+      2,
+      40,
+      40
+    ],
+    [
+      1,
+      1,
+      40,
+      40
+    ],
+    [
+      1,
+      64,
+      20,
+      20
+    ],
+    [
+      1,
+      2,
+      20,
+      20
+    ],
+    [
+      1,
+      1,
+      20,
+      20
+    ]
+  ],
+  "onnx_parity": "passed atol/rtol=1e-3",
+  "target": "rk3588",
+  "precision": "FP16"
+}

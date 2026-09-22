@@ -15,3 +15,19 @@ venv/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Android build output
+.gradle/
+.cxx/
+**/build/
+local.properties
+*.apk
+
+# Export scratch models; deployable models live in Android assets
+models/*.onnx
+models/*.rknn
+# Device images and enrolled private features
+test-results/*.png
+test-results/*.bin
+
+models/calibration/
